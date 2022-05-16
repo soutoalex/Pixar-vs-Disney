@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Disney vs Pixar</title>
+    <link rel="shortcut icon" href="../assets/img/favicon.ico">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://d3js.org/d3-queue.v3.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>
+            <span class="titreDisney">Disney</span>
+            <span class="titreVs">vs</span>
+            <span class="titrePixar">PIxar</span>
+        </h1>
+        <h2>Introduction</h2>
+        <div class="blockquote">
+            <p>
+                Ce site est un projet pour un cours de Visualisation de données.
+                Il a pour but la comparaison des films d’animation Diney et Disney-Pixar.
+                Toy story étant le premier film que j’ai regardé jusqu’au bout étant petit, la franchise occupe une
+                place
+                spéciale dans mon cœur de cinéphile.
+                Mais je ne suis pas seulement un fan de Toy Story, j’apprécie énormément les films des studios
+                Disney-Pixar
+                en général.
+                Je me bats même pour faire passer l’idée que les autres films Disney ne leur arrivent pas à la cheville.
+                Nous essayerons, à travers ce site, de voir s’il est possible de faire une comparaison objective des
+                deux
+                studios d’animation grâce à des données quantitatives.
+            </p>
+        </div>
+    </header>
+    <main>
+
+        <h2>Comparaison des studios</h2>
+
+        <div class="buttons">
+            <button id="NmbFilms" class="btn">Nombre de films</button>
+            <button id="BudgetFilms" class="btn">Budget des films</button>
+            <button id="BoxOfficeFilms" class="btn">Recettes Box Office</button>
+        </div>
+
+        <div>
+            <div class="salleCinema">
+                <svg class="sieges" width="800" height="800">
+                    <g class="siegeTemplate" style="display: none">
+                        <style type="text/css">
+                            .st0 {
+                                stroke: #FFFFFF;
+                                stroke-width: 2;
+                                stroke-miterlimit: 10;
+                            }
+
+                            .st1 {
+                                stroke: #FFFFFF;
+                                stroke-miterlimit: 10;
+                                stroke-width: 2;
+                            }
+                        </style>
+                        <path class="st0" d="M53.9,49.1l-0.1-10.4c0-0.6,0.5-1.1,1.1-1.1h3.6l-0.1-0.2V16.7c0-2.5-2-4.5-4.5-4.5H50c0,0.1,0,0.2,0,0.4
+                    c0,4.7-5.4,8.5-12,8.5s-12-3.8-12-8.5v-0.1h-4.9c-2.1,0-3.9,2.1-3.9,4.7v20.6h4.5c0.5,0,1,0.5,1,1v10.5c0,0.3-0.1,0.5-0.3,0.7
+                    c-0.6,0.6-2.1,1.8-4.1,2.9l0.1,0.7c1.2-0.7,2.5-1,4-1h31.1c1.3,0,2.6,0.3,3.7,0.9l0.6-0.7c-1.2-0.7-2.5-1.6-3.7-2.9
+                    C54,49.7,53.9,49.4,53.9,49.1z" />
+                        <path class="st1" d="M22.5,52.6c-1.5,0-2.8,0.4-4,1c-2.5,1.4-4.2,4.1-4.2,7.1v5.1c0,4.5,3.7,8.2,8.2,8.2h31.2c4.5,0,8.2-3.7,8.2-8.2
+                    v-5.1c0-3.2-1.8-5.9-4.4-7.3c-1.1-0.6-2.4-0.9-3.7-0.9C53.6,52.6,22.5,52.6,22.5,52.6z" />
+                        <path class="st1" d="M72.5,37.6H54.9c-0.6,0-1.1,0.5-1.1,1.1l0.1,10.4c0,0.3,0.1,0.6,0.3,0.8c1.2,1.3,2.5,2.2,3.7,2.9
+                    c7.3,4,13.8-1.5,15.3-2.9c0.2-0.2,0.3-0.5,0.3-0.8V38.7C73.6,38.1,73.1,37.6,72.5,37.6z" />
+                        <path class="st1" d="M22.8,49.4V38.8c0-0.5-0.5-1-1-1H4c-0.5,0-1,0.5-1,1l0.1,10.5c0,0.3,0.1,0.5,0.3,0.7c5.7,5.9,11.3,4.8,15,2.9
+                    c2-1,3.5-2.3,4.1-2.9C22.7,49.9,22.8,49.7,22.8,49.4z" />
+                        <path class="st1" d="M38,21.1c6.6,0,12-3.8,12-8.5c0-0.1,0-0.2,0-0.4c-0.3-4.5-5.5-8.1-12-8.1s-12,3.8-12,8.5v0.1
+                    C26.1,17.3,31.4,21.1,38,21.1z" />
+                    </g>
+                </svg>
+                <div id="legendes">
+                    <div id="legendeDisney">
+                        <p></p>
+                    </div>
+                    <div id="legendePixar">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <svg class="ecran" width="800" height="200">
+                    <style type="text/css">
+                        .st0 {
+                            fill: url(#SVGID_1_);
+                        }
+
+                        .st1 {
+                            fill: none;
+                            stroke: #FFFFFF;
+                            stroke-width: 4;
+                            stroke-miterlimit: 10;
+                        }
+                    </style>
+                    <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="299.6189" y1="164.801"
+                        x2="299.9738" y2="124.2197">
+                        <stop offset="0" style="stop-color:#FFFFFF" />
+                        <stop offset="8.689636e-02" style="stop-color:#D8D8D8" />
+                        <stop offset="0.2251" style="stop-color:#9F9F9F" />
+                        <stop offset="0.364" style="stop-color:#6E6E6E" />
+                        <stop offset="0.5004" style="stop-color:#474747" />
+                        <stop offset="0.6338" style="stop-color:#282828" />
+                        <stop offset="0.7634" style="stop-color:#121212" />
+                        <stop offset="0.8874" style="stop-color:#040404" />
+                        <stop offset="1" style="stop-color:#000000" />
+                    </linearGradient>
+                    <path class="st0"
+                        d="M448.9,147.5v-38c-145,49-298,0-298,0v36.2C150.9,145.7,305.1,189.6,448.9,147.5z" />
+                    <path class="st1" d="M150.9,146.9c0,0,152.1,43.7,298,1.8" />
+                </svg> -->
+
+        </div>
+        <!-- <svg id="ecran">
+            <style type="text/css">
+                .st0 {
+                    fill: none;
+                    stroke: #FFFFFF;
+                    stroke-width: 4;
+                    stroke-miterlimit: 10;
+                }
+            </style>
+            <path class="st0" d="M-348.6-396.9c0,0,460.4,132.4,901.9,5.4" />
+        </svg> -->
+
+        <p class="blockquote">
+            En cliquant sur les boutons ci-dessus, vous pourrez aperçevoir une comparaison des studios d'animations se
+            profiler.
+            En effet, les sièges se remplissent en proportion égale, soit à la répartition du nombre de films total,
+            soit à aux budget total investis dans les studions, soit aux recettes de chaques studios au box-office, et
+            ce en fonction du bouton pressé.
+        </p>
+        <h2>Comparaison des films</h2>
+        <p class="blockquote">Dans la partie ci-après, il est possible de comparer un film disney à un film Pixar. Des
+            informations
+            importantes apparaîtront aumoment de sélectionner le film.
+            De plus, la note du film sur IMDB (site référence pour la cinématographie) viendra se profiler dans le
+            graphique à barres.</p>
+        <div id="dropdown-list">
+            <div id="dropdown-list-Disney"></div>
+            <div id="dropdown-list-Pixar"></div>
+        </div>
+        </div>
+
+        <div id="comparaison">
+            <div id="texteDisney">
+                <p></p>
+            </div>
+            <div id="barres">
+                <h2>Notes des films sur IMDB</h2>
+            </div>
+    
+            <div id="textePixar">
+                <p></p>
+            </div>
+        </div>
+        <h2>Conclusion </h2>
+        <p class="blockquote">Sur ce site, nous avons essayer de trouver un vainqueur parmi les deux géants des films
+            d'animations, et ce
+            uniquement avec des données quantitatives.
+            Dès le départ, la situation n'était pas gagnée d'avance. En effet, la qualité d'un film d'animations ne se
+            réduit pas à un score au box office ou à des notes sur les films.
+            Bien d'autres paramètres entre en ligne de compte ; la musique, les animations, les personnages, etc.
+            L'appréciation d'un film ne se résout pas à des statistiques mais aux sensations que l'on a ressenti en le
+            regardant et aux souvenirs que l'on en garde.
+
+        </p>
+    </main>
+</body>
+
+
+</html>

@@ -1,0 +1,261 @@
+/*Import les typo*/
+@font-face {
+  font-family: "Waltograph";
+  src: url("./waltograph42.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PixarScript";
+  src: url("./PixarScript.ttf") format("truetype");
+}
+
+/* Titres, body, textes */
+h1 {
+  margin: auto;
+  text-align: center;
+  font-size: 500%;
+}
+
+
+.titreDisney {
+  font-family: Waltograph;
+}
+
+
+.titrePixar {
+  font-family: PixarScript;
+  font-size: 80%;
+}
+
+.titreVs {
+  font-size: 60%;
+}
+
+h2 {
+  font-size: 200%;
+  margin-top: 10%;
+}
+
+
+p {
+  font-size: 120%;
+}
+
+
+body {
+  width: 1080px;
+  margin: auto;
+  background-color: #f0e7e9;
+  font-family: "Montserrat", sans-serif;
+}
+
+.salleCinema {
+  background-color: #000000;
+  padding-top: 50px;
+  border-radius: 18px;
+}
+
+/* boutons et dropdwonlist */
+#dropdown-list {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+}
+
+#dropdown-list-Pixar {
+  justify-content: right;
+  text-align: right;
+}
+
+#dropdownDisney {
+  background-color: #000000;
+  border-radius: 8px;
+  color: white;
+  padding: 12px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  width:280px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+
+}
+
+#dropdownPixar {
+  background-color: #000000;
+  border-radius: 8px;
+  color: white;
+  padding: 12px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  width:280px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+
+}
+
+.buttons {
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #000000;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Code */
+#legendes {
+  justify-content: space-around;
+  display: flex;
+  margin: auto;
+  font-size: 100%;
+}
+
+#legendeDisney {
+  color: rgb(54, 150, 214);
+  font-size: 200%;
+  /* text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff; */
+}
+
+#legendePixar {
+  font-size: 200%;
+  color: red;
+  /* text-shadow : 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff; */
+}
+
+#comparaison {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  font-size: 100%;
+}
+
+#barres {
+  margin: auto;
+  text-align: center;
+  width: 570px;
+}
+
+#texteDisney {
+  width: 255px;
+}
+
+#textePixar {
+  width: 255px;
+}
+
+.sieges {
+  display: flex;
+  margin: auto;
+}
+
+.disney {
+  fill: rgb(54, 150, 214);
+}
+
+.pixar {
+  fill: red;
+}
+
+.blockquote {
+  text-align: justify;
+}
+
+.blockquote p:first-child::first-letter {
+  color: #000000;
+  font-weight: bold;
+  font-size: 60px;
+  float: left;
+  /* line-height: 60px; */
+  padding-right: 8px;
+  margin-top: -3px;
+}
